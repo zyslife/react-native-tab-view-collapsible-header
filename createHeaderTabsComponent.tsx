@@ -3,7 +3,7 @@ import React from 'react';
 import {
     DeviceEventEmitter,
 } from 'react-native';
-import { GestureContainer, TabViewContainerBaseProps, FitTabView, SlideFitTabView, CollapsibleHeaderProps, TABVIEW_TAB_ONCHANGE } from 'react-native-head-tab-view'
+import { GestureContainer, TabViewContainerBaseProps, FitTabView, SlideFitTabView, CollapsibleHeaderProps, EVENT_TAB_ONCHANGE } from 'react-native-head-tab-view'
 
 type ZTabViewProps<T extends Route> = Partial<TabViewProps<T>> &
     Pick<TabViewProps<T>, 'onIndexChange' | 'navigationState' | 'renderScene'> & CollapsibleHeaderProps
@@ -47,7 +47,7 @@ class CollapsibleHeaderTabView<T extends Route> extends React.Component<ForwardT
     }
 
     _onIndexChange = (index: number) => {
-        DeviceEventEmitter.emit(TABVIEW_TAB_ONCHANGE, { index })
+        DeviceEventEmitter.emit(EVENT_TAB_ONCHANGE, { index })
         this.props.onIndexChange && this.props.onIndexChange(index)
     }
 
