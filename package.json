@@ -1,10 +1,6 @@
 {
   "name": "react-native-tab-view-collapsible-header",
-<<<<<<< HEAD
   "version": "1.0.0-rc.0",
-=======
-  "version": "0.0.5",
->>>>>>> c84a1c8bf6c1274c3372f98e37d1fd32cb6d7ef4
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
