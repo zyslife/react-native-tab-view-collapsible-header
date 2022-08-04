@@ -4,9 +4,9 @@ import { GestureContainer, CollapsibleHeaderProps, GestureContainerRef } from 'r
 
 type ZTabViewProps<T extends Route> = Partial<TabViewProps<T>> &
     Pick<TabViewProps<T>, 'onIndexChange' | 'navigationState' | 'renderScene'> & CollapsibleHeaderProps
-type ForwardTabViewProps<T extends Route> = ZTabViewProps<T> & { forwardedRef: React.Ref<TabView<T>>, Component: typeof TabView }
+type ForwardTabViewProps<T extends Route> = ZTabViewProps<T> & { forwardedRef: React.Ref<typeof TabView<T>>, Component: typeof TabView }
 
-export default function createHeaderTabsComponent<T extends Route>(Component: typeof TabView, config?: {}): React.ForwardRefExoticComponent<React.PropsWithoutRef<ZTabViewProps<T>> & React.RefAttributes<TabView<T>>> {
+export default function createHeaderTabsComponent<T extends Route>(Component: typeof TabView, config?: {}): React.ForwardRefExoticComponent<React.PropsWithoutRef<ZTabViewProps<T>> & React.RefAttributes<typeof TabView<T>>> {
 
     return React.forwardRef((props: ZTabViewProps<T>, ref) => {
         return <CollapsibleHeaderTabView {...props} forwardedRef={ref} Component={Component} />
