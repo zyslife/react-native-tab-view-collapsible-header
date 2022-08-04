@@ -30,9 +30,10 @@ function CollapsibleHeaderTabView<T extends Route>(props: ForwardTabViewProps<T>
 
     const renderTabView = (e: { renderTabBarContainer: any }) => {
         const { Component } = props
+        const refProp = { ref: props.forwardedRef } as never
         return <Component
-            ref={props.forwardedRef}
             {...props}
+            {...refProp}
             renderTabBar={(tabbarProps) => e.renderTabBarContainer(_renderTabBar(tabbarProps))} />
     }
 
