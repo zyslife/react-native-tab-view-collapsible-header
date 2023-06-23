@@ -26,7 +26,7 @@
     "collapsible-header"
   ],
   "peerDependencies": {
-    "react-native-head-tab-view": "https://github.com/coletoulouse/react-native-header-tab-view.git"
+    "react-native-head-tab-view": "^4.0.0-rc.13"
   },
   "description": "Extend react-native-tab-view to have shared collapsible headers"
 }
